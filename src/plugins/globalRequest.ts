@@ -13,7 +13,7 @@ import {stringify} from "querystring";
 const request = extend({
 
     credentials: 'include', // 默认请求是否带上cookie
-    prefix: process.env.NODE_ENV === 'production' ? 'http://82.156.242.159:8081' : undefined
+    prefix: process.env.NODE_ENV === 'production' ? 'http://user.code-club.fun:8081' : undefined
     // requestType: 'form',
 });
 
