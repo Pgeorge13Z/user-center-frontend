@@ -10,6 +10,13 @@ export async function currentUser(options?: { [key: string]: any }) {
   });
 }
 
+export async function currentUser2(options?: { [key: string]: any }) {
+  return request<API.CurrentUser>('/api/user/current', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** 退出登录接口 POST /api/user/logout */
 export async function outLogin(options?: { [key: string]: any }) {
   return request<API.BaseResponse<number>>('/api/user/logout', {

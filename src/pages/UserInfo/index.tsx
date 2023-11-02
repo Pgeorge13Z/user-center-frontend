@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Descriptions, Divider } from 'antd';
 import { ModalForm, ProForm, ProFormText } from '@ant-design/pro-components';
 import { Image, Button, message } from 'antd';
-import { request } from 'umi';
-import { modifyPassword, userModify } from '@/services/ant-design-pro/api';
+import {currentUser2, modifyPassword, userModify} from '@/services/ant-design-pro/api';
 import { SYSTEM_LOGO } from '@/constant';
 
 
@@ -31,9 +30,13 @@ const UserInfo: React.FC = () => {
   });
   useEffect(() => {
     async function fetch() {
-      await request('/api/user/current', { method: 'GET' }).then((res) => {
-        setMyUser(res);
-      });
+      const res = await currentUser2()
+      // @ts-ignore
+      setMyUser(res);
+
+      // await request('/api/user/current', { method: 'GET' }).then((res) => {
+      //   setMyUser(res);
+      // });
     }
 
     fetch();
