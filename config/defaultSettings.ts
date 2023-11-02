@@ -12,10 +12,10 @@ const Settings: LayoutSettings & {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Ant Design Pro',
+  title: 'Pgeorge用户中心',
   pwa: false,
-  logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-  iconfontUrl: '',
+  logo: 'https://pgeorge-1310330018.cos.ap-chongqing.myqcloud.com/202311020941065.png',
+  iconfontUrl: 'http://localhost:8000/welcome',
 };
 
 export default Settings;

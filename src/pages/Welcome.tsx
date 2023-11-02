@@ -1,40 +1,57 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Alert, Card, Typography } from 'antd';
+import { Alert, Card, Carousel, Image, Typography } from 'antd';
 import React from 'react';
-import styles from './Welcome.less';
-const CodePreview: React.FC = ({ children }) => (
-  <pre className={styles.pre}>
-    <code>
-      <Typography.Text copyable>{children}</Typography.Text>
-    </code>
-  </pre>
-);
+import { HeartTwoTone, SmileTwoTone } from '@ant-design/icons';
+
 const Welcome: React.FC = () => {
+  const contentStyle: React.CSSProperties = {
+    margin: '5px',
+    color: '#fff',
+    textAlign: 'center',
+    width: '1645px',
+  };
   return (
-    <PageContainer>
-      <Card>
-        <Alert
-          message={'更快更强的重型组件，已经发布。'}
-          type="success"
-          showIcon
-          banner
-          style={{
-            margin: -12,
-            marginBottom: 24,
-          }}
-        />
-        <Typography.Text strong>
-          <a
-            href="https://procomponents.ant.design/components/table"
-            rel="noopener noreferrer"
-            target="__blank"
+    <>
+      <PageContainer>
+        <Card>
+          <Alert
+            message={'Pgeorge的统一后台管理中心'}
+            type="success"
+            showIcon
+            banner
+            style={{
+              margin: -12,
+              marginBottom: 10,
+            }}
+          />
+          <Typography.Title
+            level={1}
+            style={{
+              textAlign: 'center',
+            }}
           >
-            欢迎使用
-          </a>
-        </Typography.Text>
-        <CodePreview>yarn add @ant-design/pro-components</CodePreview>
-      </Card>
-    </PageContainer>
+            <SmileTwoTone /> Pgeorge用户中心管理 <HeartTwoTone twoToneColor="#eb2f96" />
+          </Typography.Title>
+        </Card>
+        <Carousel autoplay autoplaySpeed={10000} style={contentStyle}>
+          <div>
+            <Image
+              src={
+                'https://pgeorge-1310330018.cos.ap-chongqing.myqcloud.com/202311012301112.jpg'
+              }
+            />
+          </div>
+          <div>
+            <Image
+              src={
+                'https://pgeorge-1310330018.cos.ap-chongqing.myqcloud.com/202311012259720.jpg'
+              }
+            />
+          </div>
+
+        </Carousel>
+      </PageContainer>
+    </>
   );
 };
 export default Welcome;

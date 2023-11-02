@@ -15,27 +15,25 @@ declare namespace API {
     createTime:Date;
     userRole : number;
     planetCode : string;
+  };
 
+  type ModifyPasswordParam = {
+    userPassword: string;
+    newPassword: string;
+  };
 
-
-    // name?: string;
-    // avatar?: string;
-    // userid?: string;
-    // email?: string;
-    // signature?: string;
-    // title?: string;
-    // group?: string;
-    // tags?: { key?: string; label?: string }[];
-    // notifyCount?: number;
-    // unreadCount?: number;
-    // country?: string;
-    // access?: string;
-    // geographic?: {
-    //   province?: { label?: string; key?: string };
-    //   city?: { label?: string; key?: string };
-    // };
-    // address?: string;
-    // phone?: string;
+  type CreateParams = {
+    username: string;
+    userAccount: string;
+    avatarUrl? : string;
+    gender: number;
+    userPassword: string;
+    phone?: string;
+    email? :string;
+    userStatus: number;
+    createTime:Date;
+    userRole : number;
+    planetCode : string;
   };
 
   type LoginResult = {
@@ -49,6 +47,21 @@ declare namespace API {
   type PageParams = {
     current?: number;
     pageSize?: number;
+  };
+
+  /**
+   * 上传头像
+   */
+  type FileUpload = {
+    file?: File;
+  };
+
+
+  /**
+   * 删除的参数
+   */
+  type DeleteParam = {
+    id: number;
   };
 
   type RuleListItem = {
@@ -101,6 +114,14 @@ declare namespace API {
     checkPassword?: boolean;
     planetCode?: string;
     type?: string;
+  };
+
+  type SearchParams = {
+    username: string;
+    userAccount: string;
+    phone?: string;
+    email? :string;
+    planetCode : string;
   };
 
   type ErrorResponse = {
